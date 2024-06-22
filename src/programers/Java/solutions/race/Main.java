@@ -1,6 +1,9 @@
 package programers.Java.solutions.race;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 // 프로그래머스 1단계 문제
 /*
@@ -25,7 +28,8 @@ callings는 players의 원소들로만 이루어져 있습니다.
 경주 진행중 1등인 선수의 이름은 불리지 않습니다.
  */
 
-// 정답은 낼 수 있으나, Callings와 Players가 엄청 많아지는 경우 시간 초과,
+
+// 정답은 낼 수 있으나, Callings와 Players의 길이가 수만 단위로 길어지는 경우 시간 초과,
 // 원인은 List에서 index를 탐색하는 시간이 매우 길어지기 때문,
 // 따라서 HashMap 사용하여 주소값 접근방식으로 시간 단축 해야 할듯
 class ListSolution {
@@ -55,12 +59,52 @@ class ListSolution {
     }
     return -1;
   }
+
+  // 해시맵을 사용하여  1.순위(key), 이름(value) 해시맵,
+  //                 2. 이름(key), 순위(value) 해시맵을 만들어
+  //                 현재 불린 이름의 순위와 그 앞 선수의 이름과 순위를 계산
+  //                 해싱을 통한 주소값 조회 방식으로 인덱스 탐색 시간이 들지 않음 .
 }
+class HashMapSolution{
+  public String[] hashMapSolution(String[] players, String[] callings) {
+    HashMap<String, Integer> playerNameMap = new HashMap();
+    HashMap<Integer, String> playerRankMap = new HashMap();
+    List<String> result = new ArrayList<String>();
+    for (int i = 1; i <= players.length; i++) {
+      playerNameMap.put(players[i - 1], i);
+      playerRankMap.put(i, players[i - 1]);
+    }
+    for (int i = 0; i < callings.length; i++) {
+      String callingName = callings[i];
+      int callingRank = playerNameMap.get(callingName);
+      int frontRank = callingRank - 1;
+      String frontName = playerRankMap.get(callingRank - 1);
+
+      // 순위 교체
+      playerRankMap.replace(frontRank, callingName);
+      playerRankMap.replace(callingRank, frontName);
+      playerNameMap.replace(callingName, frontRank);
+      playerNameMap.replace(frontName, callingRank);
+    }
+
+    for (int i = 1; i <= playerRankMap.size(); i++) {
+      result.add(playerRankMap.get(i));
+    }
+    return result.toArray(new String[0]);
+  }
+}
+
+
 public class Main {
   public static void main(String args[]) {
-    String[] players ={"mumu", "soe", "poe", "kai", "mine"} ;
-    String[] callings ={"kai", "kai", "mine", "mine"};
+    String[] players1 ={"mumu", "soe", "poe", "kai", "mine"} ;
+    String[] callings1 ={"kai", "kai", "mine", "mine"};
     ListSolution ls = new ListSolution();
-    System.out.println(Arrays.toString(ls.listSolution(players, callings)));
+    System.out.println(Arrays.toString(ls.listSolution(players1, callings1)));
+    String[] players2 ={"mumu", "soe", "poe", "kai", "mine"} ;
+    String[] callings2 ={"kai", "kai", "mine", "mine"};
+    HashMapSolution hs = new HashMapSolution();
+    System.out.println(Arrays.toString(hs.hashMapSolution(players2, callings2)));
+
   }
 }
