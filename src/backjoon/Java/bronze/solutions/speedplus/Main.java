@@ -1,4 +1,4 @@
-package backjoon.Java.solutions.speedplus;
+package backjoon.Java.bronze.solutions.speedplus;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

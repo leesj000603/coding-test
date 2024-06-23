@@ -1,4 +1,4 @@
-package backjoon.Java.solutions.homework;
+package backjoon.Java.bronze.solutions.homework;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;

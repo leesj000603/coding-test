@@ -1,4 +1,4 @@
-package programers.Java.solutions.race;
+package programers.Java.level1.solutions.race;
 
 import java.util.ArrayList;
 import java.util.Arrays;
