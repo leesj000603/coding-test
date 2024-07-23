@@ -1,15 +1,15 @@
 package backjoon.Java.basicframe;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 class Solution {
-  public void solve() throws FileNotFoundException {
+  public void solve() throws IOException {
     System.setIn(new FileInputStream("input.txt경로"));
   }
 }
 public class Main {
-  public static void main(String[] args) throws FileNotFoundException {
+  public static void main(String[] args) throws IOException {
     Solution s = new Solution();
     s.solve();
   }
