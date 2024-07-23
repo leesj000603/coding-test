@@ -40,7 +40,8 @@ import java.util.Arrays;
  */
 class Solution {
   public void solve() throws IOException {
-    System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\prefixsum\\input.txt"));
+    // System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\prefixsum\\input.txt"));
+    System.setIn(new FileInputStream("C:\\01.lab\\01.java\\coding_test\\src\\backjoon\\Java\\silver\\solutions\\prefixsum\\input.txt"));
     BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -49,7 +50,7 @@ class Solution {
     int count = Integer.parseInt(str[1]);
 
     int [] intArray = Arrays.stream(bf.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-    ArrayList<Integer> intSumArray = new ArrayList<>();
+    ArrayList<Integer> intSumArray = new ArrayList<>(length);
 
     for (int i=0; i < length; i++) {
       if (i==0){
