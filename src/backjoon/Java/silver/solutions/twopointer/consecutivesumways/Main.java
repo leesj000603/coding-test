@@ -1,4 +1,4 @@
-package backjoon.Java.silver.solutions.consecutivesumways;
+package backjoon.Java.silver.solutions.twopointer.consecutivesumways;
 
 import java.io.FileInputStream;
 import java.io.IOException;
