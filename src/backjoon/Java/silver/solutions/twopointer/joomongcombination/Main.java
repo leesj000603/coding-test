@@ -50,46 +50,55 @@ import java.util.StringTokenizer;
 // 14999 x 15000 / 2 = 약 1억회의 연산
 class Solution {
   public void solve() throws IOException {
-    System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\twopointer\\joomong\\input.txt"));
+    System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\twopointer\\joomongcombination\\input.txt"));
     BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-
+    // 전체 재료 개수
     int numOfMaterials = Integer.parseInt(bf.readLine());
+
+    // 갑옷을 만드는데 필요한 수
     int target = Integer.parseInt(bf.readLine());
 
+    // StringTokenizer 사용
     StringTokenizer st = new StringTokenizer(bf.readLine(), " ");
+
+    // 배열 선언 (전체 재료 개수만큼 크기 선언)
     int[] materialArr = new int[numOfMaterials];
+
+    // 배열 저장용
     int i = 0;
-    int resultSum = 0;
+
+
+    int count = 0;
     int start = 0;
     int end = 1;
-    
+
     // 재료들 배열에 저장
     while (st.hasMoreTokens()){
       materialArr[i] = Integer.parseInt(st.nextToken());
       i++;
     }
-    
-    
+
+
+    // 조합 탐색 ( n * (n-1) / 2 )
     // start가 배열의 끝에 다다르면 종료
     while (start != numOfMaterials - 1){
-        // 재료의 합이 target과 같으면 resultSum에 1더하기
-        if (materialArr[start] + materialArr[end] == target){
-          resultSum ++;
-        }
-        
-        
-        // end포인터가 배열의 끝에 다다르면 start에 1 더하기, end는 start의 다음자리
-        if (end == numOfMaterials - 1) {
-          start ++;
-          end = start + 1;
-        }
-        // end포인터가 배열의 끝이 아닌경우는 end에 1 더하기
-        else {
-          end ++;
-        }
-    }
-    System.out.println(resultSum);
+      // 재료의 합이 target과 같으면 count에 1더하기
+      if (materialArr[start] + materialArr[end] == target){
+        count ++;
+      }
 
+
+      // end포인터가 배열의 끝에 다다르면 start에 1 더하기, end는 start의 다음자리
+      if (end == numOfMaterials - 1) {
+        start ++;
+        end = start + 1;
+      }
+      // end포인터가 배열의 끝이 아닌경우는 end에 1 더하기
+      else {
+        end ++;
+      }
+    }
+    System.out.println(count);
   }
 }
 

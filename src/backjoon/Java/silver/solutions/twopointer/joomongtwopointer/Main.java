@@ -48,17 +48,26 @@ class Solution {
     System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\twopointer\\joomongtwopointer\\input.txt"));
     BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
+    // 전체 재료 개수
     int numOfMaterials = Integer.parseInt(bf.readLine());
+
+    // 배열 선언 (전체 재료 개수만큼 크기 선언)
     int[] matrialArr = new int[numOfMaterials];
 
+    // 갑옷을 만드는데 필요한 수
     int target = Integer.parseInt(bf.readLine());
+
+    // StringTokenizer 사용
     StringTokenizer st = new StringTokenizer(bf.readLine(), " ");
     int i = 0;
+
+    // 고유한 재료들 배열에 저장
     while (st.hasMoreTokens()){
       matrialArr[i] = Integer.parseInt(st.nextToken());
       i ++;
     }
 
+    // 배열 정렬
     Arrays.sort(matrialArr);
 
     int start = 0;
@@ -66,14 +75,21 @@ class Solution {
 
     int targetCount = 0;
 
+    // 투포인터 알고리즘
+    // end가 start와 같은 곳을 가리킬때 종료
     while(end != start){
+      // start와 end 자리의 원소의 합이 target과 같으면
       if(matrialArr[start] + matrialArr[end] == target){
         targetCount++;
         end --;
       }
+
+      // start와 end 자리의 원소의 합이 target보다 작으면
       else if (matrialArr[start] + matrialArr[end] < target ){
         start ++;
       }
+
+      // start와 end 자리의 원소의 합이 target보다 크면
       else {
         end --;
       }
