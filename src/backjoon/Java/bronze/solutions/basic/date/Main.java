@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.date;
+package backjoon.Java.bronze.solutions.basic.date;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

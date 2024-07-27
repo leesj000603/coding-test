@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.compare;
+package backjoon.Java.bronze.solutions.basic.compare;
 
 import java.io.BufferedReader;
 import java.io.IOException;

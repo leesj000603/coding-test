@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.escaperectangle;
+package backjoon.Java.bronze.solutions.basic.escaperectangle;
 
 import java.io.*;
 import java.util.Arrays;

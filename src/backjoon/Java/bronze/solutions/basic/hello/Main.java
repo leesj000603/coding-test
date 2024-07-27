@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.hello;
+package backjoon.Java.bronze.solutions.basic.hello;
 
 class Solution {
   public void printHello() {

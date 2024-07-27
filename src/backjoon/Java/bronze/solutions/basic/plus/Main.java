@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.plus;
+package backjoon.Java.bronze.solutions.basic.plus;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

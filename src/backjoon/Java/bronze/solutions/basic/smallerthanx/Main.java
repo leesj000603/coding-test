@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.smallerthanx;
+package backjoon.Java.bronze.solutions.basic.smallerthanx;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
