@@ -1,4 +1,4 @@
-package backjoon.Java.silver.solutions.twopointer.joomong;
+package backjoon.Java.silver.solutions.twopointer.joomongcombination;
 
 
 import java.io.BufferedReader;
@@ -41,7 +41,7 @@ import java.util.StringTokenizer;
 
 
 
-// 내가 생각 한 방식
+// 방식
 // twopointer 를 사용하여 각 두 재료의 합을 구함
 // start는 0 부터 시작, end는 1부터 시작
 // end 위치를 바꿔가며 더함
