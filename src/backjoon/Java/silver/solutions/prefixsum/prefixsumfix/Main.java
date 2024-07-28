@@ -1,4 +1,4 @@
-package backjoon.Java.silver.solutions.prefixsumfix;
+package backjoon.Java.silver.solutions.prefixsum.prefixsumfix;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
