@@ -49,11 +49,15 @@ DNA 문자열은 모든 문자열에 등장하는 문자가 {‘A’, ‘C’, �
 //GATA
 //1 0 0 1
 
+//8 4
+//ACGTACGT
+//1 1 1 1
+
 // 출력 예시
 // 0
 class Solution {
   public void solve() throws IOException {
-    System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\slidingwindow\\dnapassword\\input2.txt"));
+    System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\slidingwindow\\dnapassword\\input3.txt"));
     BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
 
@@ -94,6 +98,13 @@ class Solution {
        }
     }
 
+    if (subStrRuleArr[0] >= ruleArr[0] &&
+        subStrRuleArr[1] >= ruleArr[1] &&
+        subStrRuleArr[2] >= ruleArr[2] &&
+        subStrRuleArr[3] >= ruleArr[3]) {
+      count ++;
+    }
+
     // 슬라이딩 윈도우 한칸씩 이동하고, 슬라이딩 윈도우가 배열을 넘어갈 때 까지 반복
     // 부분문자열 규칙 배열 슬라이딩 윈도우에 맞게 수정 , 규칙에 적합할 경우 count + 1
     while (end != dnaStrLen){
@@ -111,7 +122,6 @@ class Solution {
         case "T" : subStrRuleArr[3]++; break;
         default: break;
       }
-
       if (subStrRuleArr[0] >= ruleArr[0] &&
           subStrRuleArr[1] >= ruleArr[1] &&
           subStrRuleArr[2] >= ruleArr[2] &&
