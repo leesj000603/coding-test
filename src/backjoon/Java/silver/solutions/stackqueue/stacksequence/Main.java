@@ -1,4 +1,4 @@
-package backjoon.Java.silver.solutions.stack.stacksequence;
+package backjoon.Java.silver.solutions.stackqueue.stacksequence;
 
 import java.io.*;
 import java.util.LinkedList;
