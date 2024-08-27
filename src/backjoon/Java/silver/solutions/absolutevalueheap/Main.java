@@ -62,7 +62,8 @@ x가 0이라면 배열에서 절댓값이 가장 작은 값을 출력하고 그 
 class Solution {
     public void solve() throws IOException {
 
-        System.setIn(new FileInputStream("C:\\01.lab\\01.java\\coding_test\\src\\backjoon\\Java\\silver\\solutions\\absolutevalueheap\\input.txt"));
+        System.setIn(new FileInputStream("C:\\Users\\leeseungjune\\IdeaProjects\\coding-test\\src\\backjoon\\Java\\silver\\solutions\\absolutevalueheap\\input.txt"));
+        //System.setIn(new FileInputStream("C:\\01.lab\\01.java\\coding_test\\src\\backjoon\\Java\\silver\\solutions\\absolutevalueheap\\input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
@@ -71,13 +72,12 @@ class Solution {
             int absA = Math.abs(a);
             int absB = Math.abs(b);
 
-            if (absA > absB){
-                return b;
-            } else if (absA<absB) {
-                return a;
-            } else {
-                return a>b?b:a;
+            if (absA == absB){  // 절대값이 같은 경우
+                return a-b; // 원래 값으로 비교 a가 크면 양수 return
+                // b가 크면 음수 리턴, 양수라면 a가 더 크므로 b의 뒤에 있어야 함을 의미
             }
+            return absA - absB; // 절대값으로 비교 a의 절대값이 크면 양수리턴, 작으면 음수 리턴.
+
         });
 
         for (int i = 0; i < n; i++) {
