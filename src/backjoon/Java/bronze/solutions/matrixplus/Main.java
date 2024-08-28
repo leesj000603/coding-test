@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.basic.matrixplus;
+package backjoon.Java.bronze.solutions.matrixplus;
 
 
 import java.io.BufferedReader;

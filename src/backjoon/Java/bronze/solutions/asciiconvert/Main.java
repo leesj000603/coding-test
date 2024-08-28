@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.basic.asciiconvert;
+package backjoon.Java.bronze.solutions.asciiconvert;
 
 import java.io.BufferedReader;
 import java.io.IOException;

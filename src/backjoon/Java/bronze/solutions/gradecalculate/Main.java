@@ -1,4 +1,4 @@
-package backjoon.Java.bronze.solutions.basic.gradecalculate;
+package backjoon.Java.bronze.solutions.gradecalculate;
 
 
 import java.io.BufferedReader;
