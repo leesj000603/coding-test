@@ -10,7 +10,7 @@ class Solution {
 
 
 public class Main {
-  public Main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException {
     Solution s = new Solution();
     s.solve();
   }
